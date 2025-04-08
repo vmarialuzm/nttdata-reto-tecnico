@@ -34,8 +34,8 @@ const UserList = () => {
     }
 
     return (
-        <table className="min-w-full border-collapse border border-gray-400">
-            <thead>
+        <table className="min-w-full border-collapse border border-blue-500">
+            <thead className="bg-blue-500 text-white">
                 <tr>
                     <th className="border border-gray-300 px-4 py-2">Nombre</th>
                     <th className="border border-gray-300 px-4 py-2">Género</th>
@@ -53,9 +53,9 @@ const UserList = () => {
                         <td className="border border-gray-300 px-4 py-2">{user.location.city}</td>
                         <td className="border border-gray-300 px-4 py-2">{user.email}</td>
                         <td className="border border-gray-300 px-4 py-2">{new Date(user.dob.date).toLocaleDateString()}</td>
-                        <td className="border border-gray-300 px-4 py-2">
+                        <td className="border border-gray-300 px-4 py-2 text-center">
                             <img 
-                                className="rounded-full h-12 w-12"
+                                className="rounded-full h-12 w-12 mx-auto"
                                 src={user.picture.medium} 
                                 alt={user.name.first} />
                         </td>
