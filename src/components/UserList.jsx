@@ -34,11 +34,35 @@ const UserList = () => {
     }
 
     return (
-        <div className="grid grid-cols-2 gap-2 rounded-xl ">
-                {users.results.map((user) => (
-                    <UserCard key={user.id} user={user} />
+        <table className="min-w-full border-collapse border border-gray-400">
+            <thead>
+                <tr>
+                    <th className="border border-gray-300 px-4 py-2">Nombre</th>
+                    <th className="border border-gray-300 px-4 py-2">Género</th>
+                    <th className="border border-gray-300 px-4 py-2">Ubicación</th>
+                    <th className="border border-gray-300 px-4 py-2">Correo electrónico</th>
+                    <th className="border border-gray-300 px-4 py-2">Fecha de Nacimiento</th>
+                    <th className="border border-gray-300 px-4 py-2">Fotografía</th>
+                </tr>
+            </thead>
+            <tbody>
+                {users.results.map((user, index) => (
+                    <tr key={index}>
+                        <td className="border border-gray-300 px-4 py-2">{user.name.first} {user.name.last}</td>
+                        <td className="border border-gray-300 px-4 py-2">{user.gender}</td>
+                        <td className="border border-gray-300 px-4 py-2">{user.location.city}</td>
+                        <td className="border border-gray-300 px-4 py-2">{user.email}</td>
+                        <td className="border border-gray-300 px-4 py-2">{new Date(user.dob.date).toLocaleDateString()}</td>
+                        <td className="border border-gray-300 px-4 py-2">
+                            <img 
+                                className="rounded-full h-12 w-12"
+                                src={user.picture.medium} 
+                                alt={user.name.first} />
+                        </td>
+                    </tr>
                 ))}
-        </div>
+            </tbody>
+        </table>
     );
 };
 
