@@ -48,11 +48,11 @@ const UserList = () => {
             <tbody>
                 {users.results.map((user, index) => (
                     <tr key={index}>
-                        <td className="border border-gray-300 px-4 py-2">{user.name.first} {user.name.last}</td>
-                        <td className="border border-gray-300 px-4 py-2">{user.gender}</td>
-                        <td className="border border-gray-300 px-4 py-2">{user.location.city}</td>
-                        <td className="border border-gray-300 px-4 py-2">{user.email}</td>
-                        <td className="border border-gray-300 px-4 py-2">{new Date(user.dob.date).toLocaleDateString()}</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">{user.name.first} {user.name.last}</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">{user.gender}</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">{user.location.city}</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">{user.email}</td>
+                        <td className="border border-gray-300 px-4 py-2 text-center">{new Date(user.dob.date).toLocaleDateString()}</td>
                         <td className="border border-gray-300 px-4 py-2 text-center">
                             <img 
                                 className="rounded-full h-12 w-12 mx-auto"
